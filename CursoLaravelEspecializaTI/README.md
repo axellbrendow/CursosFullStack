@@ -1,0 +1,2 @@
+# CursoLaravelEspecializaTI
+Este projeto traz a implementação de um template para sites de administração que usa o Laravel como seu framework. O Nome do template é AdminLTE e foram explorados alguns recursos dele assim como vários outros do Laravel em si. Além disso, esse site foi desenvolvido ao longo do curso disponível em: https://www.youtube.com/watch?v=MuDpUnMEHGE&list=PLVSNL1PHDWvQ_qFQd5Kv3Uo4CB2vBZvLY&index=2
