@@ -1,0 +1,26 @@
+{
+  "name": "semanadoangular2017",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/axell-brendow/CursosFullStack.git"
+  },
+  "keywords": [
+    "JavaScript",
+    "Angular"
+  ],
+  "author": "Axell Brendow",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/axell-brendow/CursosFullStack/issues"
+  },
+  "homepage": "https://github.com/axell-brendow/CursosFullStack#readme",
+  "dependencies": {
+    "lodash": "^4.17.11"
+  }
+}
