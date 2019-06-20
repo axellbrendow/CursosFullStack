@@ -1,22 +1,52 @@
-const _ = require('lodash');
+// const _ = require('lodash');
 
-let games = [
+// let games = [
+//     {
+//         nome: 'Street Fighter',
+//         ano: 1990
+//     },
+//     {
+//         nome: 'Mortal Kombat',
+//         ano: 1991
+//     },
+//     {
+//         nome: 'Top Gear',
+//         ano: 1992
+//     },
+// ];
+
+// // Tarefa 1
+
+// let resultado = games.slice();
+
+// console.log(_.sortBy(resultado, ['nome']));
+// console.log();
+// console.log(_.sortBy(resultado, ['ano']));
+// console.log();
+// console.log(_.reverse(resultado));
+// console.log();
+// _.remove(resultado, (element) => element.nome == 'Top Gear');
+// console.log(resultado);
+
+var soma = somar(2, 2);
+
+console.log('soma: ', soma);
+
+var divisao = dividir(soma, 2);
+
+console.log('divisao: ', divisao);
+
+function somar(a, b)
+{
+    setTimeout(
+    () =>
     {
-        nome: 'Street Fighter',
-        ano: 1990
+        return a + b;
     },
-    {
-        nome: 'Mortal Kombat',
-        ano: 1991
-    },
-    {
-        nome: 'Top Gear',
-        ano: 1992
-    },
-];
+    10 * 1000);
+}
 
-// buscar jogo com nome top gear
-
-let resultado = _.sortBy(games, ['nome']);
-
-console.log(resultado);
+function dividir(a, b)
+{
+    return a / b;
+}
