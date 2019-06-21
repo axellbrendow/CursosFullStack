@@ -1,6 +1,6 @@
 console.log('loading...');
 
-somar(2, 2).then(
+soma(2, 2).then(
     (soma) =>
     {
         console.log('soma = ' + soma);
@@ -21,7 +21,7 @@ somar(2, 2).then(
     }
 );
 
-function somar(a, b)
+function soma(a, b)
 {
     return new Promise(
         (resolve, reject) =>
