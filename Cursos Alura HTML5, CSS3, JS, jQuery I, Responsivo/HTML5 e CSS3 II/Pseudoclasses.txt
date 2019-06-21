@@ -1,0 +1,44 @@
+﻿Pseudoclasses Estruturais do HTML
+
+Ao processar o código HTML, o navegador coloca, por conta
+própria, algumas classes nas nossas tags que servem para
+identificar qual das filhas de uma tag nossa tag é.
+
+O operador : serve para acessar apenas essas
+classes que o navegador coloca, que são chamadas
+de pseudoclasses.
+
+:first-child          -> seleciona todas as primeiras filhas.
+
+:last-child           -> seleciona todas as últimas filhas.
+
+:nth-child(2n + 1)    -> seleciona todas as filhas de ordem 2n + 1 com n pertencente aos naturais e variando de 0 a ∞.
+
+p:nth-child(2n + 1)   -> primeiro, seleciona todas as tags p, depois, seleciona as que são filhas de ordem 2n + 1.
+
+p:nth-of-type(2n + 1) -> primeiro, seleciona todas as tags p e as numera começando do 1, depois, seleciona as tags de ordem 2n + 1.
+
+#####
+
+:nth-last-child(3)    -> seleciona a terceira última filha, que é equivalente a selecionar a terceira filha contando na ordem inversa.
+
+p:nth-last-of-type(3) -> primeiro, seleciona todas as tags p e as numera começando do 1, depois, seleciona a terceira última.
+
+#####
+
+:only-child           -> seleciona tags que sejam filhas únicas. é quivalente a :nth-child(1):nth-last-child(1)
+
+--------------------------------------
+
+Pseudoclasses Dinâmicas
+
+São classes que são dinamicamente colocadas e
+retiradas das nossas tags pelo navegador.
+
+:hover   -> é colocada numa tag quando o mouse estiver flutuando sobre ela.
+
+:focus   -> é colocada numa caixa de texto quando ela estiver sendo usada.
+
+:active  -> é colocada numa tag quando ela estiver sendo clicada.
+
+:checked -> é colocada numa tag quando ela tiver marcada.

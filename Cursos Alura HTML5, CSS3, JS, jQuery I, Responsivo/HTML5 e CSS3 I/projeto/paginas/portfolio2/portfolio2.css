@@ -1,0 +1,42 @@
+/* --------------------------------- SELETORES DE CLASSES --------------------------------- */
+
+.lista-de-apresentacoes-portfolio li
+{
+	border: 8px solid #000;
+	background-color: #FAFFFC;
+	padding: 16px;
+	margin-right: 16px;
+    margin-bottom: 16px;
+	min-width: 35%;
+    max-width: 47.5%;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+.imagem-portfolio
+{
+	width: 100%;
+	line-height: 151px;
+	text-indent: -9999px;
+    margin: auto;
+}
+
+.imagem-do-site-bmw
+{
+	background-image: url(../../imagens/portfolio/bmw.png);
+}
+
+.imagem-do-site-uol
+{
+	background-image: url(../../imagens/portfolio/uol.png);
+}
+
+.imagem-do-site-ibm
+{
+	background-image: url(../../imagens/portfolio/ibm.png);
+}
+
+.imagem-do-site-g1
+{
+	background-image: url(../../imagens/portfolio/g1.png);
+}

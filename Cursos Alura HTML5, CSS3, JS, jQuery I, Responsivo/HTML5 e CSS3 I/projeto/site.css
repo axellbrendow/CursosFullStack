@@ -1,0 +1,160 @@
+/* --------------------------------- SELETORES DE TAGS --------------------------------- */
+
+body
+{
+    font-family: "Crimson Text", "Times New Roman", serif;
+    background-color: #F2FFFC;
+    font-size: 120%; /* Faz com que a fonte dentro do corpo <body> do site tenha 120% do tamanho padrão escolhido pelo usuário no navegador */
+    line-height: 1.5; /* o tamanho da linha será 150% do tamanho das letras */
+}
+
+p
+{
+    text-align: justify; /* deixa todo o texto com a mesma largura, todas as linhas terminam numa mesma reta vertical */
+    margin: 20px 0; /* 20px em cima e em baixo e 0px dos lados */
+}
+
+strong
+{
+    font-weight: bold;
+}
+
+em
+{
+    font-style: italic;
+}
+
+h1, h2 /* estilo dos títulos e subtítulos */
+{
+    font-family: "Open Sans Condensed", "Arial", sans-serif;
+}
+
+h1
+{
+    text-transform: uppercase;
+}
+
+h2
+{
+    font-size: 30px;
+    clear: both; /* faz com que os subtítulos <h2> não fiquem ao lado de elementos flutuantes */
+}
+
+main
+{
+    width: 80%;
+    float: left;
+    padding-bottom: 80px;
+}
+
+main a /* estilo dos links <a> que estão dentro da parte principal do site <main> */
+{
+    color: #851944;
+}
+
+aside, footer
+{
+    padding: 20px;
+}
+
+/* --------------------------------- SELETORES DE CLASSES --------------------------------- */
+
+.titulo-principal
+{
+    font-size: 60px;
+    background-color: #851944; /* equivalente a "background-color: rgb(133, 25, 68)" */
+    color: #FAFFFA; /* quase branco */
+    text-align: center;
+    padding: 25px;
+    border-bottom: 10px solid #000;
+}
+
+.texto-principal
+{
+    width: 720px;
+    margin: auto;
+    padding: 30px 0;
+}
+
+.foto-de-joao-da-silva
+{
+    background-image: url(imagens/eu.jpg);
+    width: 300px;
+    height: 300px;
+    text-indent: -9999px;
+    display: block;
+    float: right;
+    box-sizing: border-box;
+    border-left: 10px solid #000;
+    border-bottom: 10px solid #000;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.menu-de-navegacao
+{
+    background-color: #3C1D3D;
+    color: #F2FFFC;
+    text-align: center;
+    text-transform: lowercase;
+    float: right;
+    clear: right;
+    box-sizing: border-box;
+    width: 20%;
+    border-left: 10px solid #000;
+    border-bottom: 10px solid #000;
+    position: relative;
+    top: 300px;
+}
+
+.menu-de-navegacao h1
+{
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.menu-de-navegacao a
+{
+    font-family: "Open Sans Condensed", "Arial", sans-serif;
+    color: inherit; /* herda a cor das suas tags pai ( li -> ul -> aside ) */
+}
+
+.icones-redes-sociais li
+{
+    display: inline-block;
+    margin-top: 15px;
+}
+
+.icones-redes-sociais li a
+{
+    width: 40px;
+    height: 40px;
+    display: block;
+    text-indent: -9999px;
+}
+
+.github
+{
+    background-image: url(imagens/github.png);
+}
+
+.twitter
+{
+    background-image: url(imagens/twitter.png);
+}
+
+.linkedin
+{
+    background-image: url(imagens/linkedin.png);
+}
+
+.rodape-do-site
+{
+    background-color: #000;
+    color: #F2FFFC;
+    clear: both;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

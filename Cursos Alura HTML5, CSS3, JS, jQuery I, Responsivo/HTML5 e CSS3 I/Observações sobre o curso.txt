@@ -1,0 +1,9 @@
+Ao longo do curso percebi alguns pontos que vocês poderiam melhorar. Não consegui anotar todos por não lembrar, mas apresentarei 4 deles aqui:
+
+Aula 2 - Atividade 7: Na questão de múltipla escolha a alternativa correta era "font-size: 120%;, porém, em nenhum momento do vídeo da Atividade 1 ou dos exercícios anteriores comentou-se sobre a existência das porcentagens no CSS. Eu particularmente nem dei atenção a essa alternativa por achar que isso não seria permitido.
+
+Aula 9 - Atividade 7: Em nenhum momento do curso ouvi falar sobre a existência da SEO (Search Engine Optimization). Não sei se a intenção era nos fazer pesquisar sobre o assunto, mas não ficou legal também.
+
+Aula 10 - Atividade 15: Nos códigos colocados na "Opinião do Instrutor" há um problema. Não bastou mudar a propriedade "float: left;" para "float: right", foi necessário também mudar o "clear: right;" do menu de navegação para "clear: left".
+
+Aula 12 - A partir da Atividade 2: Na parte de reorganizar os arquivos do projeto em diferentes diretórios houve um problema grande comigo. Como eu criei mais diretórios do que foi sugerido, todas as referências do HTML ficaram erradas e não foi enfatizado que, por exemplo, os dois pontos ".." servem para voltar nos diretórios. Só usuários ativos do Linux, talvez, entenderiam a função desses dois pontos "..". Além disso, não tinha entendido direito a ideia de que cada arquivo html ou css tem como diretório padrão (raiz) o seu próprio diretório e não o diretório raiz do projeto.

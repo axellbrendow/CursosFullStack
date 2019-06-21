@@ -1,0 +1,169 @@
+.texto-principal > p::first-letter
+{
+    font-size: 2em;
+    color: #3C1D3D;
+    text-shadow: 1px 1px #000;
+    font-weight: bold;
+    line-height: 1;
+    margin-right: 0.2ch;
+}
+
+/* --------------------------------- SELETORES DE CLASSES --------------------------------- */
+
+.tabela-resumo
+{
+    border-collapse: separate;
+    border-spacing: 0.25em;
+    font-weight: bold;
+    color: #FFF;
+    margin: 1em 0;
+}
+
+.tabela-resumo thead
+{
+    background-color: #3C1D3D;
+}
+
+.tabela-resumo th
+{
+    padding: 1em;
+}
+
+.tabela-resumo tbody td:first-child
+{
+    background-color: #851944;
+    color: #FFF;
+    text-align: center;
+}
+
+.tabela-resumo td
+{
+    padding: 1em;
+    background-color: #EEE;
+    color: #000;
+}
+
+.tabela-resumo td[colspan]
+{
+    text-align: center;
+    font-style: italic;
+}
+
+.tabela-resumo td[rowspan]
+{
+    vertical-align: middle;
+}
+
+.citações
+{
+    background-color: #D9E5E3;
+    border: 1ch solid #C2CCCA;
+    width: 30ch;
+    box-sizing: border-box; /* faz com que o width da caixa seja interpretado como de uma borda a outra */
+    margin: 1rem 0;
+    padding: 2ch;
+    transition: transform 1s linear, box-shadow 1s ease-in; /* transition: <property> <delay> <speed>, ... */
+    transition-delay: 0s, 1s;
+    position: relative;
+    
+    -webkit-animation: quicar 1s infinite;
+    animation: quicar 1s infinite; /* animation: <name> <duration> <times> */
+    
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+    
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+}
+
+@-webkit-keyframes quicar
+{
+    0%
+    {
+        top: 0;
+    }
+    
+    90%
+    {
+        transform: rotate(2deg);
+    }
+    
+    95%
+    {
+        transform: rotate(-2deg);
+    }
+    
+    100%
+    {
+        top: 1em;
+    }
+}
+
+@keyframes quicar
+{
+    0%
+    {
+        top: 0;
+    }
+    
+    90%
+    {
+        transform: rotate(2deg);
+    }
+    
+    95%
+    {
+        transform: rotate(-2deg);
+    }
+    
+    100%
+    {
+        top: 1em;
+    }
+}
+
+.citações::before
+{
+    content: '“';
+    font-size: 10em;
+    color: #BBB;
+    position: absolute;
+}
+
+.citações > p
+{
+    position: relative;
+}
+
+.citações:hover,
+.citações:focus
+{
+    box-shadow: 0 0 0 99999px rgba(0, 0, 0, 0.8);
+    transition-delay: 1s, 0s;
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused;
+}
+
+.citações:nth-of-type(odd) /* citações ímpares */
+{
+    margin-left: 1rem;
+    float: right; /* o elemento saíra do fluxo de tags e flutuará à direita de onde ele estava */
+}
+
+.citações:nth-of-type(odd):hover,
+.citações:nth-of-type(odd):focus
+{
+    transform: scale(1.2) rotate(5deg);
+}
+
+.citações:nth-of-type(even) /* citações pares */
+{
+    margin-right: 1rem;
+    float: left;
+}
+
+.citações:nth-of-type(even):hover,
+.citações:nth-of-type(even):focus
+{
+    transform: scale(1.2) rotate(-5deg);
+}

@@ -1,0 +1,7 @@
+rem (root ephemeral unit) -> 1rem = tamanho (altura) da fonte do elemento raiz <html>
+
+em (ephemeral unit)       -> 1em  = tamanho (altura) da fonte do elemento pai do atual
+
+ch (character)            -> 1ch  = largura de 1 caractere da fonte. Geralmente a largura do 0.
+
+% (percentage)            -> x%   = x% da largura do elemento pai

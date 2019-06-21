@@ -1,0 +1,502 @@
+html, body
+{
+    overflow-x: hidden;
+    height: 100%;
+}
+
+body
+{
+    perspective-origin: 50% 160px;
+    perspective: 6px;
+    display: block;
+}
+
+/* --------------------------------- CABEÇALHO --------------------------------- */
+
+.titulo-principal, .inicio-palavras
+{
+    transform-style: preserve-3d;
+}
+
+.titulo-principal
+{
+    position: relative;
+}
+
+.foto-joao-da-silva-home
+{
+    width: 200px;
+    -o-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    box-shadow: 0 0 1em #000; /* box-shadow: x y distância,-a-partir-da-borda,-para-a-difusão-da-sombra tamanho-da-sombra cor */
+}
+
+.subtitulo-principal
+{
+    font-size: 0.35em;
+    text-align: center;
+}
+
+.inicio-palavras
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.inicio-palavras li
+{
+    color: rgba(255, 127, 127, 0.5);
+    font-size: 150%;
+    font-family: "Shadows Into Light", cursive;
+    font-weight: bold;
+    position: absolute;
+    -webkit-animation: entrada-suave 2s;
+    animation: entrada-suave 2s;
+}
+
+@-webkit-keyframes entrada-suave
+{
+    0%
+    {
+        opacity: 0;
+        transform: scale(0.1);
+    }
+}
+
+@keyframes entrada-suave
+{
+    0%
+    {
+        opacity: 0;
+        transform: scale(0.1);
+    }
+}
+
+.eficiencia
+{
+    top: 40%;
+    left: 60%;
+    -o-transform: translate(-50%, -50%) rotate(-10deg) translateZ(4px) scale(0.25);
+    -ms-transform: translate(-50%, -50%) rotate(-10deg) translateZ(4px) scale(0.25);
+    -moz-transform: translate(-50%, -50%) rotate(-10deg) translateZ(4px) scale(0.25);
+    -webkit-transform: translate(-50%, -50%) rotate(-10deg) translateZ(4px) scale(0.25);
+    transform: translate(-50%, -50%) rotate(-10deg) translateZ(4px) scale(0.25);
+    opacity: 0.9;
+}
+
+.boas-praticas
+{
+    top: 67%;
+    left: 20%;
+    -o-transform: translate(-50%, -50%) rotate(12deg) translateZ(1px) scale(0.25);
+    -ms-transform: translate(-50%, -50%) rotate(12deg) translateZ(1px) scale(0.25);
+    -moz-transform: translate(-50%, -50%) rotate(12deg) translateZ(1px) scale(0.25);
+    -webkit-transform: translate(-50%, -50%) rotate(12deg) translateZ(1px) scale(0.25);
+    transform: translate(-50%, -50%) rotate(12deg) translateZ(1px) scale(0.25);
+    opacity: 0.3;
+}
+
+.codigo-limpo
+{
+    top: 42%;
+    left: 25%;
+    -o-transform: translate(-50%, -50%) rotate(-12deg) translateZ(2px) scale(0.25);
+    -ms-transform: translate(-50%, -50%) rotate(-12deg) translateZ(2px) scale(0.25);
+    -moz-transform: translate(-50%, -50%) rotate(-12deg) translateZ(2px) scale(0.25);
+    -webkit-transform: translate(-50%, -50%) rotate(-12deg) translateZ(2px) scale(0.25);
+    transform: translate(-50%, -50%) rotate(-12deg) translateZ(2px) scale(0.25);
+    opacity: 0.5;
+}
+
+.css3
+{
+    top: 52%;
+    left: 35%;
+    -o-transform: translate(-50%, -50%) rotate(12deg) translateZ(2px) scale(0.25);
+    -ms-transform: translate(-50%, -50%) rotate(12deg) translateZ(2px) scale(0.25);
+    -moz-transform: translate(-50%, -50%) rotate(12deg) translateZ(2px) scale(0.25);
+    -webkit-transform: translate(-50%, -50%) rotate(12deg) translateZ(2px) scale(0.25);
+    transform: translate(-50%, -50%) rotate(12deg) translateZ(2px) scale(0.25);
+    opacity: 0.5;
+}
+
+.html5
+{
+    top: 30%;
+    left: 70%;
+    -o-transform: translate(-50%, -50%) rotate(15deg) translateZ(2px) scale(0.25);
+    -ms-transform: translate(-50%, -50%) rotate(15deg) translateZ(2px) scale(0.25);
+    -moz-transform: translate(-50%, -50%) rotate(15deg) translateZ(2px) scale(0.25);
+    -webkit-transform: translate(-50%, -50%) rotate(15deg) translateZ(2px) scale(0.25);
+    transform: translate(-50%, -50%) rotate(15deg) translateZ(2px) scale(0.25);
+    opacity: 0.5;
+}
+
+.javascript
+{
+    top: 15%;
+    left: 65%;
+    -o-transform: translate(-50%, -50%) rotate(-12deg) translateZ(1px) scale(0.25);
+    -ms-transform: translate(-50%, -50%) rotate(-12deg) translateZ(1px) scale(0.25);
+    -moz-transform: translate(-50%, -50%) rotate(-12deg) translateZ(1px) scale(0.25);
+    -webkit-transform: translate(-50%, -50%) rotate(-12deg) translateZ(1px) scale(0.25);
+    transform: translate(-50%, -50%) rotate(-12deg) translateZ(1px) scale(0.25);
+    opacity: 0.3;
+}
+
+.acessibilidade
+{
+    top: 22%;
+    left: 35%;
+    -o-transform: translate(-50%, -50%) rotate(-10deg) translateZ(3px) scale(0.25);
+    -ms-transform: translate(-50%, -50%) rotate(-10deg) translateZ(3px) scale(0.25);
+    -moz-transform: translate(-50%, -50%) rotate(-10deg) translateZ(3px) scale(0.25);
+    -webkit-transform: translate(-50%, -50%) rotate(-10deg) translateZ(3px) scale(0.25);
+    transform: translate(-50%, -50%) rotate(-10deg) translateZ(3px) scale(0.25);
+    opacity: 0.7;
+}
+
+.responsivo
+{
+    top: 32%;
+    left: 40%;
+    -o-transform: translate(-50%, -50%) rotate(15deg) translateZ(3px) scale(0.25);
+    -ms-transform: translate(-50%, -50%) rotate(15deg) translateZ(3px) scale(0.25);
+    -moz-transform: translate(-50%, -50%) rotate(15deg) translateZ(3px) scale(0.25);
+    -webkit-transform: translate(-50%, -50%) rotate(15deg) translateZ(3px) scale(0.25);
+    transform: translate(-50%, -50%) rotate(15deg) translateZ(3px) scale(0.25);
+    opacity: 0.7;
+}
+
+.otimizacoes
+{
+    top: 70%;
+    left: 70%;
+    -o-transform: translate(-50%, -50%) rotate(-10deg) translateZ(2px) scale(0.25);
+    -ms-transform: translate(-50%, -50%) rotate(-10deg) translateZ(2px) scale(0.25);
+    -moz-transform: translate(-50%, -50%) rotate(-10deg) translateZ(2px) scale(0.25);
+    -webkit-transform: translate(-50%, -50%) rotate(-10deg) translateZ(2px) scale(0.25);
+    transform: translate(-50%, -50%) rotate(-10deg) translateZ(2px) scale(0.25);
+    opacity: 0.5;
+}
+
+.agilidade
+{
+    top: 75%;
+    left: 35%;
+    -o-transform: translate(-50%, -50%) rotate(12deg) translateZ(1px) scale(0.25);
+    -ms-transform: translate(-50%, -50%) rotate(12deg) translateZ(1px) scale(0.25);
+    -moz-transform: translate(-50%, -50%) rotate(12deg) translateZ(1px) scale(0.25);
+    -webkit-transform: translate(-50%, -50%) rotate(12deg) translateZ(1px) scale(0.25);
+    transform: translate(-50%, -50%) rotate(12deg) translateZ(1px) scale(0.25);
+    opacity: 0.3;
+}
+
+.design
+{
+    top: 40%;
+    left: 60%;
+    -o-transform: translate(-50%, -50%) rotate(15deg) translateZ(2px) scale(0.25);
+    -ms-transform: translate(-50%, -50%) rotate(15deg) translateZ(2px) scale(0.25);
+    -moz-transform: translate(-50%, -50%) rotate(15deg) translateZ(2px) scale(0.25);
+    -webkit-transform: translate(-50%, -50%) rotate(15deg) translateZ(2px) scale(0.25);
+    transform: translate(-50%, -50%) rotate(15deg) translateZ(2px) scale(0.25);
+    opacity: 0.5;
+}
+
+.etiqueta-twitter
+{
+    background-color: #3C1D3D;
+    box-sizing: border-box;
+    font-size: 0.5em;
+    border: 0.2em solid #000;
+    padding: 0.5em;
+    line-height: 1;
+    display: block;
+    width: 14em;
+    height: 2.4em;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform-origin: 0 0; /* Muda o eixo de rotação do elemento para o canto superior esquerdo */
+                           /* É importante lembrar que o eixo y fica na verdade apontando para baixo e não para cima como de costume */
+    transform: translate(calc(calc(0.707 * calc(2.4em - 100%)) + 100%), calc(-0.707 * 2.4em)) rotate(45deg);
+    /* translate(x = cos(45)( h - L ) + L, y = -cos(45) h) */
+    
+    -webkit-animation: entrada-suave 0.5s;
+    animation: entrada-suave 0.5s;
+    
+    -webkit-animation-delay: 1.8s;
+    animation-delay: 1.8s; /* começa quase que no fim da animação das palavras */
+    
+    -webkit-animation-fill-mode: backwards;
+    animation-fill-mode: backwards;
+}
+
+/* --------------------------------- SAUDAÇÕES --------------------------------- */
+
+.saudacao p
+{
+    color: #99A;
+    line-height: 1;
+    font-size: 1.5em;
+    padding: 0 2em;
+    margin: 2em 0;
+}
+
+.saudacao p:hover em,
+.saudacao p:focus em
+{
+    animation-play-state: paused;
+}
+
+.saudacao-inicio
+{
+    color: #889;
+    font-size: 3em;
+}
+
+.saudacao-ultima-linha
+{
+    text-align: right;
+    display: block;
+}
+
+.saudacao strong
+{
+    color: #000;
+    font-size: 2em;
+}
+
+.saudacao em
+{
+    color: #851944;
+    font-size: 4em;
+    transform: skew(-10deg) rotate(-5deg);
+    display: inline-block;
+    position: relative;
+    
+    -webkit-animation: flutuar 1s infinite;
+    animation: flutuar 1s infinite;
+    
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+    
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+}
+
+@-webkit-keyframes flutuar
+{
+    0%
+    {
+        top: -0.1em;
+    }
+    
+    100%
+    {
+        top: 0.1em;
+    }
+}
+
+@keyframes flutuar
+{
+    0%
+    {
+        top: -0.1em;
+    }
+    
+    100%
+    {
+        top: 0.1em;
+    }
+}
+
+/* --------------------------------- SEÇÕES --------------------------------- */
+
+.botao-index
+{
+    font-size: 1.25em;
+    background-color: #851944;
+    color: #FFF;
+    border: .2em solid black;
+    width: 40ch;
+    display: block;
+    text-align: center;
+    margin: 3em auto;
+    padding: .5em;
+    box-shadow: 0 0 1em #000, inset 0 0 0.5em #FFF;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+}
+
+.botao-index:hover,
+.botao-index:focus
+{
+    box-shadow: 0 0 1em #FA9;
+    background-color: #C54974;
+    text-decoration: none;
+    color: #FFF;
+}
+
+.secao-inicio
+{
+    padding: 2rem;
+}
+
+.secao-inicio h2
+{
+    text-transform: uppercase;
+    text-shadow: 2px 2px #000;
+    font-size: 3em;
+    margin-bottom: .5em;
+    text-shadow: 3px 3px #000;
+}
+
+/* --------------------------------- SEÇÃO DOS TRABALHOS --------------------------------- */
+
+.trabalhos
+{
+    background-color: #3C1D3D;
+    border-top: .5em solid #000;
+    border-bottom: .5em solid #000;
+    background-image: linear-gradient(135deg, transparent, transparent 14px, rgba(0, 0, 0, 0.1) 14px, rgba(0, 0, 0, 0.1) 15px, transparent 15px, transparent);
+    background-size: 20px 20px;
+    background-attachment: scroll;
+}
+
+.trabalhos h2
+{
+    color: #FFF;
+}
+
+.trabalhos ul
+{
+    margin-top: 2em;
+    display: flex;
+    flex-direction: row;
+}
+
+.trabalhos li
+{
+    border: 10px solid black;
+    flex: 1;
+}
+
+.trabalhos li:nth-of-type(1)
+{
+    order: 2;
+    transform: scale(1.2);
+}
+
+.trabalhos li:nth-of-type(2)
+{
+    order: 1;
+}
+
+.trabalhos li:nth-of-type(3)
+{
+    order: 3;
+}
+
+.trabalhos li a
+{
+    background-size: 100% 100%;
+}
+
+/* --------------------------------- SEÇÃO DO BLOG --------------------------------- */
+
+.blog
+{
+    background-color: #999;
+    color: #FFF;
+    border-bottom: .5em solid #851944;
+    position: relative;
+    background-image: linear-gradient(45deg, transparent, transparent 14px, rgba(255, 255, 255, 0.1) 14px, rgba(255, 255, 255, 0.1) 15px, transparent 15px, transparent);
+    background-size: 20px 20px;
+    background-attachment: fixed;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.blog small
+{
+    position: relative;
+    top: -2em;
+}
+
+.blog li
+{
+    margin-top: 1em;
+    padding: 0.5em;
+}
+
+.blog li a
+{
+    color: #FCF;
+}
+
+.blog li:hover,
+.blog li:focus
+{
+    background-color: #F2FFFC;
+    width: 35%;
+}
+
+.blog li:hover a,
+.blog li:focus a
+{
+    color: #F26;
+}
+
+.blog .texto-post-inicio
+{
+    color: #000;
+    padding: 1.5em;
+    background-color: #F2FFFC;
+    position: absolute;
+    top: 3em;
+    left: 35%;
+    right: 3em;
+    height: 45%;
+    display: none;
+}
+
+.blog li:hover .texto-post-inicio,
+.blog li:focus .texto-post-inicio
+{
+    display: block;
+}
+
+/* --------------------------------- RODAPÉ --------------------------------- */
+
+footer
+{
+    background-color: #000;
+    color: #FFF;
+    padding-top: 2em;
+    padding-left: 2rem;
+}
+
+footer h2
+{
+    font-size: 3em;
+}
+
+footer a
+{
+    color: #F99;
+}
+
+main
+{
+    width: 100%;
+    padding-bottom: 0;
+    float: none;
+}

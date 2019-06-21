@@ -1,0 +1,39 @@
+/* --------------------------------- SELETORES DE TAGS --------------------------------- */
+
+article
+{
+    margin: 20px 0;
+}
+
+cite
+{
+    font-style: italic;
+    float: right;
+}
+
+/* --------------------------------- SELETORES DE CLASSES --------------------------------- */
+
+.separador-de-posts
+{
+    width: 720px;
+    margin: 0;
+    padding: 0;
+    border: 1px solid;
+    border-color: gray transparent;
+    /*
+    Invés do "separador-de-posts", poderíasse usar também esse código CSS dentro do seletor para <article>:
+    padding-bottom: 30px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #CCC;
+    */
+}
+
+.leia-mais
+{
+	font-size: 24px;
+	padding: 8px;
+	margin: 16px;
+	display: block;
+	text-align: center;
+	background-color: #E6E7E8;
+}

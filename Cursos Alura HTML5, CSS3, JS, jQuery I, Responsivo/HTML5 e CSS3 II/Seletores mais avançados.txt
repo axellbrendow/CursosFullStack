@@ -1,0 +1,7 @@
+A ~ B         -> após elementos do tipo A, seleciona todos os irmãos do tipo B.
+
+A + B         -> após elementos do tipo A, seleciona o primeiro irmão se for do tipo B.
+
+A > B         -> seleciona os filhos diretos de A que são do tipo B.
+
+[src^="foto"] -> seleciona todas as tags que tenham o atributo src começando com a palavra foto.

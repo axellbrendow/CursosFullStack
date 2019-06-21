@@ -1,0 +1,58 @@
+﻿body
+{
+	perspective: 50em;
+}
+
+.cubo
+{
+	position: relative;
+	padding: 100px;
+	background-color: #000;
+	transform-style: preserve-3d;
+	transform: rotateZ(70deg) rotateY(0deg);
+	width: 10em;
+	heigth: 10em;
+}
+
+.cubo div
+{
+	width: 5em;
+	height: 5em;
+	position: absolute;
+}
+
+.face1
+{
+	background-color: #ABC;
+	transform: translateZ(-2.5em);
+}
+
+.face2
+{
+	background-color: #ACB;
+	transform: translateZ(3.5em);
+}
+
+.face3
+{
+	background-color: #BAC;
+	transform: translateX(-2.5em) rotateY(90deg);
+}
+
+.face4
+{
+	background-color: #BCA;
+	transform: translateX(2.5em) rotateY(90deg);
+}
+
+.face5
+{
+	background-color: #CAB;
+	transform: translateY(-2.5em) rotateX(90deg);
+}
+
+.face6
+{
+	background-color: #CBA;
+	transform: translateY(2.5em) rotateX(90deg);
+}

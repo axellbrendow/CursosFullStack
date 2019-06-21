@@ -1,0 +1,13 @@
+Antes do flexbox usamos algumas propriedades para tratar do layout da página:
+
+- position
+- display
+- float
+
+Porém, todas essas propriedades ajustam o elemento em relação ao seu ancestral.
+
+Em alguns casos, seria interessante que, a partir de um pai, os filhos fossem ajustados de uma mesma forma.
+
+Para casos como esse, nasceu no CSS3 a propriedade display: flex;. Após colocá-la em um elemento, todos os seus filhos
+se ajustaram de uma mesma forma dentro dele. Por padrão, os elementos se alinham na horizontal, ficam com a mesma altura
+e começam à esquerda (ficam alinhados à esquerda).

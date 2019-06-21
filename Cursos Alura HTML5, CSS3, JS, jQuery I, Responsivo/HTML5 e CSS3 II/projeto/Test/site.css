@@ -1,0 +1,139 @@
+body {
+    font-family: "Crimson Text", serif;
+    background-color: #F2FFFC;
+    line-height: 1.5;
+}
+
+main {
+    float: left;
+    width: 85%;
+}
+
+main h1 {
+    font-size: 300%;
+    background-color: #851944;
+    color: #fafffa;
+    text-align: center;
+    font-family: "Open Sans Condensed", sans-serif;
+    padding: 1.25rem;
+    margin: 0rem;
+    border-bottom: 0.5rem black solid;
+    text-transform: uppercase;
+}
+
+.titulo-principal {
+	font-size: 300%;
+    background-color: #851944;
+    color: #fafffa;
+    text-align: center;
+    font-family: "Open Sans Condensed", sans-serif;
+    padding: 1.25rem;
+    margin: 0rem;
+    border-bottom: 0.5rem black solid;
+}
+
+.titulo-principal h1 {
+    text-transform: uppercase;
+}
+
+main div {
+    width: 50%;
+    margin: 0 auto;
+    padding-top: 1.5rem;
+    padding-bottom: 2rem;
+}
+
+b {
+    font-weight: bold;
+}
+
+em {
+    font-style: italic;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-family: "Open Sans Condensed", sans-serif;
+    clear: both;
+}
+
+p {
+    text-align: justify;
+    margin: 1rem 0;
+}
+
+aside {
+    font-family: "Open Sans Condensed", sans-serif;
+    background-color: #3C1D3D;
+    color: #F2FFFC;
+    padding: 1rem;
+    text-align: center;
+    text-transform: lowercase;
+    width: 20%;
+    clear: right;
+    box-sizing: border-box;
+    float: right;
+    box-sizing: border-box;
+    border-bottom: 10px solid black;
+    border-left: 10px solid black;
+    position: absolute;
+    top: 310px;
+    right: 0px;
+}
+
+.eu {
+    float: right;
+    box-sizing: border-box;
+    border-bottom: 10px solid black;
+    border-left: 10px solid black;
+    position: absolute;
+    right: 0px;
+}
+
+aside a {
+    color: inherit;
+    text-decoration: none;
+}
+
+aside h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
+    text-transform: uppercase;
+}
+
+.redes-sociais li {
+    display: inline-block;
+}
+
+.redes-sociais a {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    text-indent: -1000rem;
+}
+
+.github {
+    background-image: url(../img/github.png);
+}
+
+.twitter {
+    background-image: url(../img/twitter.png);
+}
+
+.linkedin {
+    background-image: url(../img/linkedin.png);
+}
+
+footer {
+    background-color: black;
+    color: #F2FFFC;
+    padding: 0.5rem;
+    clear: both;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+main a {
+    color: #851944;
+}

@@ -1,0 +1,111 @@
+label[for], textarea[id="mensagem"]
+{
+    display: block;
+}
+
+label[for="nome"], label[for="email"]
+{
+    position: relative;
+}
+
+label[for="nome"]::after, label[for="email"]::after
+{
+    content: '';
+    background-position: center;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    background-color: /*#666*/#6F0000;
+    width: 2em;
+    height: 2em;
+    position: absolute;
+    top: 100%;
+    left: 0;
+}
+
+label[for="nome"]::after
+{
+    background-image: url(../../imagens/usuario.png);
+}
+
+label[for="email"]::after
+{
+    background-image: url(../../imagens/email.png);
+}
+
+label[for="outro"]
+{
+    display: inline-block;
+}
+
+form > fieldset, label[for="mensagem"]
+{
+    margin-top: 1em;
+}
+
+form > fieldset > fieldset
+{
+    display: inline-block;
+}
+
+fieldset legend, label[for="mensagem"]
+{
+    font-weight: bold;
+}
+
+input[type="text"], input[type="email"], textarea
+{
+    font-family: inherit;
+    font-size: 100%;
+    width: 100%;
+    padding: 0.5em;
+    box-sizing: border-box;
+    border: 0.1em solid gray;
+}
+
+input:focus, textarea:focus
+{
+    background-color: #FFD;
+}
+
+input:invalid, textarea:invalid
+{
+    box-shadow: 0 0 0.1em #F00;
+}
+
+input[id="nome"], input[id="email"]
+{
+    position: relative;
+    left: 2em;
+    height: 2em;
+    width: calc(100% - 2em);
+}
+
+input[name="outro-assunto"]
+{
+    visibility: hidden;
+    width: auto;
+}
+
+input[id="outro"]:checked ~ input[name="outro-assunto"]
+{
+    visibility: visible;
+}
+
+button[type="submit"]
+{
+    display: block;
+    margin-top: 1.5em;
+    margin-left: auto;
+    padding: 0.5em 1em;
+    font-family: "Open Sans Condensed", "Arial", sans-serif;
+    background-color: #3C1D3D;
+    color: #F2FFFC;
+    text-align: center;
+    font-size: 120%;
+    border: 0;
+}
+
+button:hover, button:focus
+{
+    background-color: #8C1D3D;
+}
