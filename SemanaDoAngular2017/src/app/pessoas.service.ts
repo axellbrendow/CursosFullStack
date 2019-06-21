@@ -30,11 +30,27 @@ export class PessoasService {
   ]
 
   pessoa_selecionada: any = {};
+  boolMostrarApenasAdultos: boolean = false;
 
   constructor() { }
 
   selecionaPessoa(pessoa)
   {
     this.pessoa_selecionada = pessoa;
+  }
+
+  mostrarApenasAdultos()
+  {
+    this.boolMostrarApenasAdultos = true;
+  }
+
+  mostrarTodos()
+  {
+    this.boolMostrarApenasAdultos = false;
+  }
+
+  horaAtual()
+  {
+    return new Date();
   }
 }

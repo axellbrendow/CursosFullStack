@@ -1,7 +1,7 @@
 <ul>
   <li *ngFor="let pessoa of pessoasService.lista" (click)="pessoasService.selecionaPessoa(pessoa)">
     <!-- <div *ngIf="pessoa.idade >= 18"> -->
-    <div [ngClass]="{'escondido': pessoa.idade < 18}">
+    <div [ngClass]="{'escondido': pessoa.idade < 18 && pessoasService.boolMostrarApenasAdultos}">
       - Nome: {{ pessoa.nome }}
       <br/>
       Idade: {{ pessoa.idade }}
@@ -12,7 +12,11 @@
   </li>
 </ul>
 
+<button (click)="pessoasService.mostrarApenasAdultos()">Mostrar apenas adultos</button>
+<button (click)="pessoasService.mostrarTodos()">Mostrar todos</button>
+
 <h2>
+  Quantidade de pessoas: {{ pessoasService.lista.length }} {{ pessoasService.horaAtual() }} <br/>
   Pessoa selecionada: <br/>
   Nome: {{ pessoasService.pessoa_selecionada.nome }} <br/>
   Idade: {{ pessoasService.pessoa_selecionada.idade }} <br/>
