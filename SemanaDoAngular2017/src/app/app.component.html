@@ -1,11 +1,22 @@
 <ul>
-  <li *ngFor="let pessoa of lista">
-    Nome: {{ pessoa.nome }}
-    <br/>
-    Idade: {{ pessoa.idade }}
-
+  <li *ngFor="let pessoa of pessoasService.lista" (click)="pessoasService.selecionaPessoa(pessoa)">
+    <!-- <div *ngIf="pessoa.idade >= 18"> -->
+    <div [ngClass]="{'escondido': pessoa.idade < 18}">
+      - Nome: {{ pessoa.nome }}
+      <br/>
+      Idade: {{ pessoa.idade }}
+      <br/>
+      <!-- Como pessoa.descricao tem HTML, é necessário usar o atributo innerHTML -->
+      Descrição: <p [innerHTML]="pessoa.descricao"></p>
+    </div>
   </li>
 </ul>
+
+<h2>
+  Pessoa selecionada: <br/>
+  Nome: {{ pessoasService.pessoa_selecionada.nome }} <br/>
+  Idade: {{ pessoasService.pessoa_selecionada.idade }} <br/>
+</h2>
 
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">

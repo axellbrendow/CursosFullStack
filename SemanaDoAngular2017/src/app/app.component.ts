@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PessoasService } from './pessoas.service';
 
 @Component({
   selector: 'app-root',
@@ -6,27 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'SemanaDoAngular2017';
-  lista:any[] = [
-    {
-      nome: 'Fulano',
-      idade: 16
-    },
-    {
-      nome: 'Beltrano',
-      idade: 17
-    },
-    {
-      nome: 'Ciclano',
-      idade: 18
-    },
-    {
-      nome: 'Deltrano',
-      idade: 19
-    },
-    {
-      nome: 'Eltrano',
-      idade: 20
-    },
-  ]
+  private title = 'SemanaDoAngular2017';
+  
+  // já declara um campo público da classe no construtor, evita uso do this e etc.
+  constructor(public pessoasService: PessoasService) { }
 }
