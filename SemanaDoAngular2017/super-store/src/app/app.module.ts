@@ -17,6 +17,7 @@ import { ProductPageComponent } from './pages/product-page/product-page.componen
 import { Error404PageComponent } from './pages/error404-page/error404-page.component';
 import { RoutingModule } from './app.routes';
 import { AboutPageComponent } from './pages/about-page/about-page.component';
+import { PeopleListComponent } from './components/people-list/people-list.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { AboutPageComponent } from './pages/about-page/about-page.component';
     ProductsPageComponent,
     ProductPageComponent,
     Error404PageComponent,
-    AboutPageComponent
+    AboutPageComponent,
+    PeopleListComponent
   ],
   imports: [
     BrowserModule,
