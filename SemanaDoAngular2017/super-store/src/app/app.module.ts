@@ -18,6 +18,7 @@ import { Error404PageComponent } from './pages/error404-page/error404-page.compo
 import { RoutingModule } from './app.routes';
 import { AboutPageComponent } from './pages/about-page/about-page.component';
 import { PeopleListComponent } from './components/people-list/people-list.component';
+import { MenuService } from './providers/menu.service';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,7 @@ import { PeopleListComponent } from './components/people-list/people-list.compon
     BrowserModule,
     RoutingModule
   ],
-  providers: [],
+  providers: [MenuService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -25,12 +25,14 @@ export class MenuService {
 
   open()
   {
+    console.log('opening...');
     this.opened = true;
     this.fix();
   }
 
   close()
   {
+    console.log('closing...');
     this.opened = false;
   }
 }
