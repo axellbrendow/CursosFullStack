@@ -13,12 +13,16 @@ export class ProductListComponent implements OnInit {
   
   constructor(public products: ProductsService) { }
 
-  ngOnInit() {
-    this.products.list().then((products: any[]) => {
-      setTimeout(() => {
-        this.items = products;
-        this.loading = false;
-      }, 1 * 1000) // 1 second delay
-    })
+  ngOnInit() 
+  {
+    this.products.list().then(
+      (products: any[]) => 
+      {
+        setTimeout(() => {
+          this.items = products;
+          this.loading = false;
+        }, 1 * 1000) // 1 second delay
+      }
+    );
   }
 }

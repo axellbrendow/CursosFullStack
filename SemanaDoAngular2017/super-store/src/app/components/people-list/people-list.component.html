@@ -1,12 +1,12 @@
 <div class="tabs">
   <ul>
     <span *ngFor="let option of tabsService.options; let i=index">
-      <li [ngClass]="{'is-active': i == 0, 'animated shake': true}"><a>{{ option }}</a></li>
+      <li class="animated shake" [ngClass]="{'is-active': i == 0}"><a>{{ option }}</a></li>
     </span>
   </ul>
 </div>
 
-<div class="card" *ngFor="let pessoa of peopleService.pessoas" [ngClass]="{'animated bounceInRight': true}">
+<div class="card animated bounceInRight" *ngFor="let pessoa of peopleService.pessoas">
   <div class="card-content">
     <div class="media">
       <div class="media-left">

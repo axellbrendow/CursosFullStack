@@ -34,35 +34,58 @@ export class ProductsService {
     );
   }
 
-  view(id: any) {
-    return new Promise((resolve, reject) => {
-      this.list().then((products: any[]) => {
-        let product = _.find(products, (p) => {
-          return p.id == id;
-        });
-        // se tiver post resolve, senão rejeita
-        return product ? resolve(product) : reject('product not found');
-      });
-    })
+  view(id: any)
+  {
+    return new Promise(
+      (resolve, reject) =>
+      {
+        this.list().then(
+          (products: any[]) =>
+          {
+            let product = _.find(products, (p) => { return p.id == id; });
+
+            // se tiver post resolve, senão rejeita
+            return product ? resolve(product) : reject('product not found');
+          }
+        );
+      }
+    );
   }
 
-  search(keyword: string) {
-    return new Promise((resolve, reject) => {
-      this.list().then((products: any[]) => {
-        let items: any[];
-        if (products.length) {
-          items = _.filter(products, (p) => {
-            return p.name.toLocaleLowerCase().includes(keyword.toLocaleLowerCase());
-          });
-        }
-        resolve(items);
-      });
-    })
+  search(keyword: string)
+  {
+    return new Promise(
+      (resolve, reject) =>
+      {
+        this.list().then(
+          (products: any[]) =>
+          {
+            let items: any[];
+
+            if (products.length)
+            {
+              items = _.filter(products,
+                (p) =>
+                {
+                  return p.name.toLocaleLowerCase().includes(keyword.toLocaleLowerCase());
+                }
+              );
+            }
+
+            resolve(items);
+          }
+        );
+      }
+    );
   }
 
-  scrollTop() {
-    $('html, body').animate({
-      scrollTop: 0
-    }, 0);
+  scrollTop()
+  {
+    $(document.documentElement, document.body).animate(
+      {
+        scrollTop: 0
+      },
+      0
+    );
   }
 }
