@@ -19,6 +19,7 @@ import { RoutingModule } from './app.routes';
 import { AboutPageComponent } from './pages/about-page/about-page.component';
 import { PeopleListComponent } from './components/people-list/people-list.component';
 import { MenuService } from './providers/menu.service';
+import { ProductsService } from './providers/products.service';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,7 @@ import { MenuService } from './providers/menu.service';
     BrowserModule,
     RoutingModule
   ],
-  providers: [MenuService],
+  providers: [MenuService, ProductsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

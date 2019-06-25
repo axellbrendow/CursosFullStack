@@ -8,6 +8,19 @@ export class MenuService {
 
   opened: boolean = false;
 
+  options: any[] = [
+    {
+      icon: 'fa fa-home',
+      text: 'Home',
+      route: '/'
+    },
+    {
+      icon: 'fa fa-gamepad',
+      text: 'Produtos',
+      route: '/products'
+    }
+  ]
+
   constructor() { }
 
   fix()
@@ -25,14 +38,12 @@ export class MenuService {
 
   open()
   {
-    console.log('opening...');
     this.opened = true;
     this.fix();
   }
 
   close()
   {
-    console.log('closing...');
     this.opened = false;
   }
 }
