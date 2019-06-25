@@ -19,8 +19,8 @@ export class ProductCardComponent implements OnInit {
   // Ex.: <app-product-card [products]="[ 0, 1, 2 ]" (response)="mostrarResposta($event)"></app-product-card>
   // Essas notações são para EventEmitters
 
-  @Input() products: ProductsService;
-  @Input() cart: CartService;
+  @Input() product: any = {};
+  @Input() detailedView: boolean = false;
 
   constructor(public products: ProductsService, public cart: CartService) { }
 
