@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { CartService } from 'src/app/providers/cart.service';
 import { ProductsService } from 'src/app/providers/products.service';
 
@@ -37,11 +37,11 @@ export class ProductCardComponent implements OnInit {
 
   addToCart(item: any)
   {
-    this.cart.add(item).then(
+    /* this.cart.add(item).then(
       () =>
       {
         console.info(item.name + ' adicionado/atualizado no carrinho');
       }
-    ).catch(console.warn);
+    ).catch(console.warn); */
   }
 }

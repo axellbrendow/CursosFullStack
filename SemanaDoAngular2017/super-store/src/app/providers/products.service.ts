@@ -81,7 +81,7 @@ export class ProductsService {
 
   scrollTop()
   {
-    $(document.documentElement, document.body).animate(
+    $([document.documentElement, document.body]).animate(
       {
         scrollTop: 0
       },

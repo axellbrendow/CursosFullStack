@@ -12,12 +12,11 @@ export class HomePageComponent implements OnInit {
   constructor(public menu: MenuService, public productsService: ProductsService) { }
 
   ngOnInit() {
-    console.log( this.productsService.list().then(
-        (products) =>
-        {
-          console.log(products);
-        }
-      )
+    this.productsService.list().then(
+      (products) =>
+      {
+        console.log(products);
+      }
     );
   }
 

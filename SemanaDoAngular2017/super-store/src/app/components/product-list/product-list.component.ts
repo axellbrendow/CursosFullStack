@@ -18,7 +18,8 @@ export class ProductListComponent implements OnInit {
     this.products.list().then(
       (products: any[]) => 
       {
-        setTimeout(() => {
+        setTimeout(
+          () => {
           this.items = products;
           this.loading = false;
         }, 1 * 1000) // 1 second delay
