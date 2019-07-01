@@ -34,7 +34,7 @@ export class ProductsService {
     );
   }
 
-  view(id: any)
+  getProduct(id: any)
   {
     return new Promise(
       (resolve, reject) =>
@@ -42,10 +42,10 @@ export class ProductsService {
         this.list().then(
           (products: any[]) =>
           {
-            let product = _.find(products, (p) => { return p.id == id; });
+            let product = _.find(products, (p) => p.id == id);
 
             // se tiver post resolve, senão rejeita
-            return product ? resolve(product) : reject('product not found');
+            return product ? resolve(product) : reject(`Produto não encontrado. id: ${id}`);
           }
         );
       }

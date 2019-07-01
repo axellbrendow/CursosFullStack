@@ -1,4 +1,4 @@
 <a class="navbar-item" (click)="clear()">
-  <span class="tag is-danger">{{ quantity || 0 }}</span> <!-- coloca 0 caso quantity não exista -->
+  <span class="tag is-danger">{{ cart.items?.length || 0 }}</span> <!-- coloca 0 caso quantity não exista -->
   <i class="fa fa-shopping-cart"></i>
 </a>

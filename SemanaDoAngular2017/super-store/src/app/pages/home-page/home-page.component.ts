@@ -15,7 +15,7 @@ export class HomePageComponent implements OnInit {
     this.productsService.list().then(
       (products) =>
       {
-        console.log(products);
+        // console.log(products);
       }
     );
   }

@@ -9,10 +9,14 @@ import { ProductsService } from 'src/app/providers/products.service';
 })
 export class ProductCardComponent implements OnInit {
 
+  // @Input é um decorator https://ultimatecourses.com/blog/angular-decorators
+  // https://blog.wgbn.com.br/fazendo-o-typescript-trabalhar-para-voc%C3%AA-546bd08a93ac
   // @Input() faz com que esse componente receba uma entrada como atributo da sua tag.
   // Ex.: @Input() products: ProductsService
   // Ex.: <app-product-card [products]="[ 0, 1, 2 ]"></app-product-card>
 
+  // @Output é um decorator https://ultimatecourses.com/blog/angular-decorators
+  // https://blog.wgbn.com.br/fazendo-o-typescript-trabalhar-para-voc%C3%AA-546bd08a93ac
   // @Output() faz com que esse componente entregue uma saída (um evento) num atributo de sua tag.
   // Ex.: @Input() products: ProductsService
   // Ex.: @Output() response: boolean
@@ -37,11 +41,11 @@ export class ProductCardComponent implements OnInit {
 
   addToCart(item: any)
   {
-    /* this.cart.add(item).then(
+    this.cart.add(item).then(
       () =>
       {
-        console.info(item.name + ' adicionado/atualizado no carrinho');
+        console.info(item.name + ' adicionado/atualizado no carrinho.');
       }
-    ).catch(console.warn); */
+    ).catch(console.warn);
   }
 }

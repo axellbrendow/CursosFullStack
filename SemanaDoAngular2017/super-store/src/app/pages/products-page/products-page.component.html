@@ -1,3 +1,7 @@
-<p>
-  products-page works!
-</p>
+<app-header></app-header>
+<app-menu></app-menu>
+
+<div (click)="menu.close()">
+    <app-product-list></app-product-list>
+    <app-footer></app-footer>
+</div>

@@ -1,15 +1,21 @@
+<app-searchbar [ngClass]="{'is-hidden': !modal}" (closeSearch)="hideSearch()"></app-searchbar>
+
 <nav class="navbar animated slideInDown" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <a role="button" class="navbar-burger burger" (click)="menu.open()" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <a role="button" class="navbar-burger burger" (click)="menu.open()"
+        aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
       </a>
     </div>
   
-    <app-logo></app-logo>
+    <a routerLink="/">
+      <app-logo></app-logo>
+    </a>
     
     <div id="navbarBasicExample" class="navbar-menu">
+
         <div class="navbar-start">
           <a class="navbar-item">
             
@@ -39,15 +45,19 @@
         </div>
   
       <div class="navbar-end">
+
         <div class="navbar-item" >
           <a (click)="showSearch()">
             <i class="fa fa-search"></i>
           </a>
         </div>
+
         <div class="navbar-item">
           <app-cartbar></app-cartbar>
         </div>
+
       </div>
+
     </div>
   </nav>
   

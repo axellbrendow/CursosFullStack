@@ -7,7 +7,9 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build:prod": "ng build --prod --aot && node workbox-build.js",
+    "deploy:git": "npm run build:prod && cd dist && cd super-store && cp index.html 404.hmtl && git init && git remote add origin https://github.com/axell-brendow/axell-brendow.github.io && git add --all && git commit -am \"Deploy PWA super-store\" && git push origin HEAD:master --force"
   },
   "private": true,
   "dependencies": {
@@ -47,6 +49,7 @@
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
-    "typescript": "~3.4.3"
+    "typescript": "~3.4.3",
+    "workbox-build": "^4.3.1"
   }
 }

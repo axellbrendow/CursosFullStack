@@ -1,3 +1,63 @@
-<p>
-  searchbar works!
-</p>
+<div class="modal animated slideInUp">
+
+  <div class="modal-background"></div>
+
+  <div class="modal-content">
+    <!-- Any other Bulma elements you want -->
+    <nav class="nav">
+
+      <div class="nav-left">
+        <a class="close is-large" (click)="hideModal()"><i class="fa fa-long-arrow-left"></i> Voltar</a>
+
+        <form novalidate (submit)="submit($event)" #searchForm="ngForm">
+          <!-- A diretiva [(ngModel)] faz com que o valor do input
+            seja jogado em tempo real para a variável keyword -->
+          <!-- Lembrar de importar em app.module.ts:
+            import { FormsModule } from '@angular/forms'; -->
+          <div class="field">
+            <div class="control">
+              <input [(ngModel)]="keyword" name="keyword" type="text"
+                class="input is-rounded" placeholder="Busque um produto">
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="nav-center">
+      </div>
+
+      <div class="nav-right">
+      </div>
+      
+    </nav>
+
+    <div class="container">
+
+      <article (click)="goTo(item)" class="media animated slideInDown"
+        *ngFor="let item of items">
+        
+        <figure class="media-left">
+          <p class="image is-64x64">
+            <img src="assets/games/{{item.image}}">
+          </p>
+        </figure>
+
+        <div class="media-content">
+          <div class="content">
+            <p>
+              <strong>{{item.name}}</strong>             
+              <br>
+              <small>{{item.type}} · {{item.year}}</small>
+            </p>
+          </div>
+        </div>
+
+      </article>
+
+      <small *ngIf="keyword==null">Digite e pressione enter</small>
+      <small *ngIf="!items.length && submitted == true">nada encontrado =(</small>
+
+    </div>
+  </div>
+
+</div>
