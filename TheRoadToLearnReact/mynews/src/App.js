@@ -21,6 +21,22 @@ const list = [
   },
 ];
 
+class Button extends React.Component {
+  render() {
+    const { onClick, className = '', children, } = this.props;
+
+    return (
+      <button
+        onClick={onClick}
+        className={className}
+        type="button"
+      >
+        {children}
+      </button>
+    );
+  }
+}
+
 class Search extends React.Component
 {
   render()
@@ -34,6 +50,11 @@ class Search extends React.Component
       </form>
     );
   }
+}
+
+function filterByTerm(searchTerm)
+{
+  return (item) => item.title.toLocaleLowerCase().includes( searchTerm.toLocaleLowerCase() );
 }
 
 class Table extends React.Component
@@ -54,19 +75,14 @@ class Table extends React.Component
           <span>{ item.num_comments }</span>
           <span>{ item.points }</span>
           <span>
-            <button onClick={ () => onDismiss(item.objectID) } type="button">
+            <Button onClick={ () => onDismiss(item.objectID) }>
               Dismiss
-            </button>
+            </Button>
           </span>
         </div>
       )
     );
   }
-}
-
-function filterByTerm(searchTerm)
-{
-  return (item) => item.title.toLocaleLowerCase().includes( searchTerm.toLocaleLowerCase() );
 }
 
 class App extends React.Component
