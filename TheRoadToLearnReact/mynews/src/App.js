@@ -37,19 +37,14 @@ class Button extends React.Component {
   }
 }
 
-class Search extends React.Component
+function Search({ value, onChange, children })
 {
-  render()
-  {
-    const { value, onChange, children } = this.props;
-
-    return (
-      <form>
-        { children }
-        <input type="text" value={value} onChange={onChange}></input>
-      </form>
-    );
-  }
+  return (
+    <form>
+      { children }
+      <input type="text" value={value} onChange={onChange}></input>
+    </form>
+  );
 }
 
 function filterByTerm(searchTerm)
