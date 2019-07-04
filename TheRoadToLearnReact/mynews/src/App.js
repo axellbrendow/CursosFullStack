@@ -2,6 +2,14 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+const DEFAULT_QUERY = 'redux';
+
+const PATH_BASE = 'https://hn.algolia.com/api/v1';
+const PATH_SEARCH = '/search';
+const PARAM_SEARCH = 'query=';
+
+let url = `${PATH_BASE}${PATH_SEARCH}?${PARAM_SEARCH}${DEFAULT_QUERY}`;
+
 const list = [
   {
     title: 'React',
@@ -59,30 +67,41 @@ function Table({ list, pattern, onDismiss })
   const smallColumn = { width: '10%' };
 
   return (
-    <div className="table">
-    {
-      list.filter(
-        filterByTerm(pattern)
-      )
-      .map(
-        (item) =>
-        <div key={ item.objectID }>
-          <span style={ largeColumn }>
-            <a href={ item.url }>{ item.title }</a>
-          </span>
-          <span style={ midColumn }>{ item.author }</span>
-          <span style={ smallColumn }>{ item.num_comments }</span>
-          <span style={ smallColumn }>{ item.points }</span>
-          <span style={ smallColumn }>
-            <Button onClick={ () => onDismiss(item.objectID) }
-              className="button-inline">
-              Dismiss
-            </Button>
-          </span>
-        </div>
-      )
-    }
-    </div>
+    <table className="table">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Number of comments</th>
+          <th>Points</th>
+          <th>Remove</th>
+        </tr>
+      </thead>
+      <tbody>
+      {
+        list.filter(
+          filterByTerm(pattern)
+        )
+        .map(
+          (item) =>
+          <tr key={ item.objectID }>
+            <td style={ largeColumn }>
+              <a href={ item.url }>{ item.title }</a>
+            </td>
+            <td style={ midColumn }>{ item.author }</td>
+            <td style={ smallColumn }>{ item.num_comments }</td>
+            <td style={ smallColumn }>{ item.points }</td>
+            <td style={ smallColumn }>
+              <Button onClick={ () => onDismiss(item.objectID) }
+                className="button-inline">
+                Dismiss
+              </Button>
+            </td>
+          </tr>
+        )
+      }
+      </tbody>
+    </table>
   );
 }
 
@@ -93,21 +112,43 @@ class App extends React.Component
     super(props);
 
     this.state = {
-      list: list,
-      searchTerm: ''
+      result: null,
+      searchTerm: DEFAULT_QUERY
     };
 
+    this.setSearchTopStories = this.setSearchTopStories.bind(this);
     this.onDismiss = this.onDismiss.bind(this);
     this.onSearchChange = this.onSearchChange.bind(this);
   }
 
+  setSearchTopStories(result)
+  {
+    this.setState({ result });
+  }
+
+  componentDidMount()
+  {
+    const { searchTerm } = this.state;
+    
+    url = `${PATH_BASE}${PATH_SEARCH}?${PARAM_SEARCH}${searchTerm}`;
+
+    fetch(url).then((response) => response.json())
+      .then((json) => this.setSearchTopStories(json))
+      .catch(error => error);
+  }
+
   onDismiss(id)
   {
-    const updatedList = this.state.list.filter(
+    const updatedList = this.state.result.hits.filter(
       (item) => item.objectID != id
     );
 
-    this.setState({ list: updatedList });
+    this.setState(
+      {
+        // No create-react-app, o operador de spread ... cria uma cópia das propriedades do objeto
+        result: { ...this.state.result, hits: updatedList }
+      }
+    );
   }
 
   onSearchChange(event)
@@ -117,18 +158,24 @@ class App extends React.Component
 
   render()
   {
-    const {list, searchTerm} = this.state;
+    const {result, searchTerm} = this.state;
+    let element = null;
 
-    return (
-      <div className="page">
-      	<div className="interactions"> 
-          <Search value={searchTerm} onChange={this.onSearchChange}>
-            Search
-          </Search>
+    if (result)
+    {
+      element = (
+        <div className="page">
+          <div className="interactions"> 
+            <Search value={searchTerm} onChange={this.onSearchChange}>
+              Search
+            </Search>
+          </div>
+            <Table list={result.hits} pattern={searchTerm} onDismiss={this.onDismiss}></Table>
         </div>
-          <Table list={list} pattern={searchTerm} onDismiss={this.onDismiss}></Table>
-      </div>
-    );
+      );
+    }
+
+    return element;
   }
 }
 
