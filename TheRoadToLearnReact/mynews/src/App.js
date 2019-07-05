@@ -117,10 +117,12 @@ class App extends React.Component
     super(props);
 
     this.state = {
-      result: null,
+      results: null,
+      searchKey: '',
       searchTerm: DEFAULT_QUERY
     };
 
+    this.needsToSearchTopStories = this.needsToSearchTopStories.bind(this);
     this.setSearchTopStories = this.setSearchTopStories.bind(this);
     this.fetchSearchTopStories = this.fetchSearchTopStories.bind(this);
     this.onDismiss = this.onDismiss.bind(this);
@@ -128,14 +130,25 @@ class App extends React.Component
     this.onSearchSubmit = this.onSearchSubmit.bind(this);
   }
 
+  needsToSearchTopStories(searchTerm)
+  {
+    return !this.state.results[searchTerm];
+  }
+  
   setSearchTopStories(result)
   {
     const { hits, page } = result;
+    const { searchKey, results } = this.state;
     
-    const oldHits = page !== 0 ? this.state.result.hits : [];
+    const oldHits = (results && results[searchKey]) ? results[searchKey].hits : [];
     const updatedHits = [ ...oldHits, ...hits ];
     
-    this.setState({ result: { hits: updatedHits, page } });
+    this.setState({
+      results: {
+        ...results,
+        [searchKey]: { hits: updatedHits, page }
+      }
+    });
   }
 
   fetchSearchTopStories(searchTerm, page = 0)
@@ -151,19 +164,26 @@ class App extends React.Component
   {
     const { searchTerm } = this.state;
     
+    this.setState({ searchKey: searchTerm });
     this.fetchSearchTopStories(searchTerm);
   }
 
   onDismiss(id)
   {
-    const updatedList = this.state.result.hits.filter(
+    const { results, searchKey } = this.state;
+    const { hits, page } = results[searchKey];
+    
+    const updatedList = hits.filter(
       (item) => item.objectID != id
     );
 
     this.setState(
       {
         // No create-react-app, o operador de spread ... cria uma cópia das propriedades do objeto
-        result: { ...this.state.result, hits: updatedList }
+        results: {
+          ...results,
+          [searchKey]: { hits: updatedList, page }
+        }
       }
     );
   }
@@ -177,18 +197,32 @@ class App extends React.Component
   {
     const { searchTerm } = this.state;
     
-    this.fetchSearchTopStories(searchTerm);
+    this.setState({ searchKey: searchTerm });
+    
+    if (this.needsToSearchTopStories(searchTerm))
+    {
+      this.fetchSearchTopStories(searchTerm);
+    }
     
     event.preventDefault();
   }
   
   render()
   {
-    const {result, searchTerm} = this.state;
-    const page = (result && result.page) || 0;
+    const { searchTerm, results, searchKey } = this.state;
+    const resultsForCurrentKey = results && results[searchKey];
+    
+    const page = (
+      resultsForCurrentKey && results[searchKey].page
+    ) || 0;
+    
+    const list = (
+      resultsForCurrentKey && results[searchKey].hits
+    ) || [];
+    
     let element = null;
 
-    if (result)
+    if (resultsForCurrentKey)
     {
       element = (
         <div className="page">
@@ -197,12 +231,11 @@ class App extends React.Component
               Search
             </Search>
           </div>
-          {
-            result ?
-            <Table list={result.hits} pattern={searchTerm} onDismiss={this.onDismiss}></Table> : null
-          }
+          
+          <Table list={list} pattern={searchTerm} onDismiss={this.onDismiss}/>
+          
           <div className="interactions"> 
-            <Button onClick={() => this.fetchSearchTopStories(searchTerm, page + 1)}>
+            <Button onClick={() => this.fetchSearchTopStories(searchKey, page + 1)}>
               more
             </Button>
           </div>
