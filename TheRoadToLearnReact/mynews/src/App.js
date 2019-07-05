@@ -155,9 +155,9 @@ class App extends React.Component
   {
     url = `${PATH_BASE}${PATH_SEARCH}?${PARAM_SEARCH}${searchTerm}&${PARAM_PAGE}${page}&${PARAM_HPP}${DEFAULT_HITS_PER_PAGE}`;
 
-    fetch(url).then((response) => response.json())
-      .then((json) => this.setSearchTopStories(json))
-      .catch(error => error);
+    fetch(url).then( (response) => response.json() )
+      .then( (json) => this.setSearchTopStories(json) )
+      .catch( (error) => this.setState( { error } ) );
   }
   
   componentDidMount()
@@ -209,7 +209,7 @@ class App extends React.Component
   
   render()
   {
-    const { searchTerm, results, searchKey } = this.state;
+    const { searchTerm, results, searchKey, error } = this.state;
     const resultsForCurrentKey = results && results[searchKey];
     
     const page = (
@@ -232,7 +232,11 @@ class App extends React.Component
             </Search>
           </div>
           
-          <Table list={list} pattern={searchTerm} onDismiss={this.onDismiss}/>
+          {
+            error ?
+            <p>Something went wrong.</p> :
+            <Table list={list} pattern={searchTerm} onDismiss={this.onDismiss}/>
+          }
           
           <div className="interactions"> 
             <Button onClick={() => this.fetchSearchTopStories(searchKey, page + 1)}>
