@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import logo from './logo.svg';
 import './App.css';
 
@@ -155,8 +156,7 @@ class App extends React.Component
   {
     url = `${PATH_BASE}${PATH_SEARCH}?${PARAM_SEARCH}${searchTerm}&${PARAM_PAGE}${page}&${PARAM_HPP}${DEFAULT_HITS_PER_PAGE}`;
 
-    fetch(url).then( (response) => response.json() )
-      .then( (json) => this.setSearchTopStories(json) )
+    axios(url).then( (result) => this.setSearchTopStories(result.data) )
       .catch( (error) => this.setState( { error } ) );
   }
   
@@ -174,7 +174,7 @@ class App extends React.Component
     const { hits, page } = results[searchKey];
     
     const updatedList = hits.filter(
-      (item) => item.objectID != id
+      (item) => item.objectID !== id
     );
 
     this.setState(
