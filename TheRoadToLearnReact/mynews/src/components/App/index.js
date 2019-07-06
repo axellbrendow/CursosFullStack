@@ -1,115 +1,24 @@
 import React from 'react';
 import axios from 'axios';
-import logo from './logo.svg';
-import './App.css';
+// import React from '../../../node_modules/react';
+// import axios from '../../../node_modules/axios';
+import Button from '../Button';
+import Search from '../Search';
+import Table from '../Table';
+import logo from '../../logo.svg';
+import './index.css';
 
-const DEFAULT_QUERY = 'redux';
-const DEFAULT_HITS_PER_PAGE = 100;
-
-const PATH_BASE = 'https://hn.algolia.com/api/v1';
-const PATH_SEARCH = '/search';
-const PARAM_SEARCH = 'query=';
-const PARAM_PAGE = 'page=';
-const PARAM_HPP = 'hitsPerPage=';
+import {
+  DEFAULT_QUERY,
+  DEFAULT_HITS_PER_PAGE,
+  PATH_BASE,
+  PATH_SEARCH,
+  PARAM_SEARCH,
+  PARAM_PAGE,
+  PARAM_HPP,
+} from '../../constants';
 
 let url = `${PATH_BASE}${PATH_SEARCH}?${PARAM_SEARCH}${DEFAULT_QUERY}&${PARAM_PAGE}&${PARAM_HPP}${DEFAULT_HITS_PER_PAGE}`;
-
-const list = [
-  {
-    title: 'React',
-    url: 'https://reactjs.org/',
-    author: 'Jordan Walke',
-    num_comments: 3,
-    points: 4,
-    objectID: 0,
-  },
-  {
-    title: 'Redux',
-    url: 'https://redux.js.org/',
-    author: 'Dan Abramov, Andrew Clark',
-    num_comments: 2,
-    points: 5,
-    objectID: 1,
-  },
-];
-
-class Button extends React.Component {
-  render() {
-    const { onClick, className = '', children, } = this.props;
-
-    return (
-      <button
-        onClick={onClick}
-        className={className}
-        type="button"
-      >
-        {children}
-      </button>
-    );
-  }
-}
-
-function Search({ value, onChange, onSubmit, children })
-{
-  return (
-    <form onSubmit={onSubmit}>
-      <input type="text" value={value} onChange={onChange}></input>
-      <Button type="submit">
-        { children }
-      </Button>
-    </form>
-  );
-}
-
-function filterByTerm(searchTerm)
-{
-  return (item) => item.title.toLocaleLowerCase().includes( searchTerm.toLocaleLowerCase() );
-}
-
-function Table({ list, pattern, onDismiss })
-{
-  const largeColumn = { width: '40%' };
-  const midColumn = { width: '30%' };
-  const smallColumn = { width: '10%' };
-
-  return (
-    <table className="table">
-      <thead>
-        <tr>
-          <th>Title</th>
-          <th>Author</th>
-          <th>Number of comments</th>
-          <th>Points</th>
-          <th>Remove</th>
-        </tr>
-      </thead>
-      <tbody>
-      {
-        list.filter(
-          filterByTerm(pattern)
-        )
-        .map(
-          (item) =>
-          <tr key={ item.objectID }>
-            <td style={ largeColumn }>
-              <a href={ item.url }>{ item.title }</a>
-            </td>
-            <td style={ midColumn }>{ item.author }</td>
-            <td style={ smallColumn }>{ item.num_comments }</td>
-            <td style={ smallColumn }>{ item.points }</td>
-            <td style={ smallColumn }>
-              <Button onClick={ () => onDismiss(item.objectID) }
-                className="button-inline">
-                Dismiss
-              </Button>
-            </td>
-          </tr>
-        )
-      }
-      </tbody>
-    </table>
-  );
-}
 
 class App extends React.Component
 {
