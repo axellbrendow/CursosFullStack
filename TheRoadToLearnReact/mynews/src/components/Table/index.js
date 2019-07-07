@@ -3,7 +3,18 @@ import Button from '../Button';
 
 function filterByTerm(searchTerm)
 {
-  return (item) => item.title.toLocaleLowerCase().includes( searchTerm.toLocaleLowerCase() );
+  return (item) =>
+  {
+    let include = false;
+
+    if (searchTerm && item && item.title)
+    {
+      include = item.title.toLocaleLowerCase()
+        .includes( searchTerm.toLocaleLowerCase() );
+    }
+
+    return include;
+  };
 }
 
 export default function Table({ list, pattern, onDismiss })

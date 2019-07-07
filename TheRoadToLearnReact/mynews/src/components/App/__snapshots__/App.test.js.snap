@@ -24,3 +24,30 @@ exports[`Search has a valid snapshot 1`] = `
   </button>
 </form>
 `;
+
+exports[`Table has a valid snapshot 1`] = `
+<table
+  className="table"
+>
+  <thead>
+    <tr>
+      <th>
+        Title
+      </th>
+      <th>
+        Author
+      </th>
+      <th>
+        Number of comments
+      </th>
+      <th>
+        Points
+      </th>
+      <th>
+        Remove
+      </th>
+    </tr>
+  </thead>
+  <tbody />
+</table>
+`;
