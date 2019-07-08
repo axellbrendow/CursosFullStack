@@ -1,6 +1,9 @@
 import React from 'react';
 import Button from '../Button';
 
+// O React vem com um checador de tipos embutido: PropTypes.
+import PropTypes from 'prop-types';
+
 function filterByTerm(searchTerm)
 {
   return (item) =>
@@ -41,7 +44,7 @@ export default function Table({ list, pattern, onDismiss })
         )
         .map(
           (item) =>
-          <tr key={ item.objectID }>
+          <tr key={ item.objectID } className="table-row">
             <td style={ largeColumn }>
               <a href={ item.url }>{ item.title }</a>
             </td>
@@ -61,3 +64,20 @@ export default function Table({ list, pattern, onDismiss })
     </table>
   );
 }
+
+Table.propTypes =
+{
+  list: PropTypes.arrayOf(
+    PropTypes.shape(
+      {
+        objectID: PropTypes.number.isRequired,
+        author: PropTypes.string,
+        url: PropTypes.string,
+        num_comments: PropTypes.number,
+        points: PropTypes.number
+      }
+    )
+  ).isRequired,
+
+  onDismiss: PropTypes.func.isRequired
+};

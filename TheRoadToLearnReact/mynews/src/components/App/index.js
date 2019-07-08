@@ -1,5 +1,9 @@
 import React from 'react';
 import axios from 'axios';
+
+// O React vem com um checador de tipos embutido: PropTypes.
+import PropTypes from 'prop-types';
+
 // import React from '../../../node_modules/react';
 // import axios from '../../../node_modules/axios';
 import Button from '../Button';

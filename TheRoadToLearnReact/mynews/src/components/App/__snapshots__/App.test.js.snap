@@ -5,6 +5,7 @@ exports[`App has a valid snapshot 1`] = `null`;
 exports[`Button has a valid snapshot 1`] = `
 <button
   className=""
+  onClick={[Function]}
   type="button"
 >
   Give Me More
@@ -18,6 +19,7 @@ exports[`Search has a valid snapshot 1`] = `
   />
   <button
     className=""
+    onClick={[Function]}
     type="button"
   >
     Search

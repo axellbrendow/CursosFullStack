@@ -31,13 +31,13 @@
 
 .table-row
 {
-	display: flex;
+	/* display: flex;
 	line-height: 24px;
 	white-space: nowrap;
 	margin: 10px 0;
 	padding: 10px;
 	background: #ffffff;
-	border: 1px solid #e3e3e3;
+	border: 1px solid #e3e3e3; */
 }
 
 .table-header > span
