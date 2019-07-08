@@ -5,13 +5,13 @@ import PropTypes from 'prop-types';
 
 export default class Button extends React.Component {
   render() {
-    const { onClick, className, children } = this.props;
+    const { onClick, className, type = 'button', children } = this.props;
     
     return (
       <button
         onClick={onClick}
         className={className}
-        type="button"
+        type={type}
       >
         {children}
       </button>
