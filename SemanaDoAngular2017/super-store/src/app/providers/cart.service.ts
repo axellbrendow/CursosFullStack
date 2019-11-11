@@ -28,7 +28,7 @@ export class CartService {
         {
           reject('Falha na inserção. O item recebido não tem id:\n' + item);
         }
-        
+
         else
         {
           let exists = false;
@@ -43,7 +43,7 @@ export class CartService {
               }
             }
           );
-          
+
           // senao adiciona um novo item
           if (!exists) {
             this.newItem.product = item;
@@ -68,3 +68,4 @@ export class CartService {
     console.info('Carrinho vazio.');
   }
 }
+

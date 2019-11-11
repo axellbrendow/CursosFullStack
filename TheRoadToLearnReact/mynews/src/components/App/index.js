@@ -21,6 +21,7 @@ import {
   PARAM_PAGE,
   PARAM_HPP,
 } from '../../constants';
+import {Link} from "react-router-dom";
 
 let url = `${PATH_BASE}${PATH_SEARCH}?${PARAM_SEARCH}${DEFAULT_QUERY}&${PARAM_PAGE}&${PARAM_HPP}${DEFAULT_HITS_PER_PAGE}`;
 
@@ -143,6 +144,7 @@ class App extends React.Component
             <Search value={searchTerm} onChange={this.onSearchChange} onSubmit={this.onSearchSubmit}>
               Search
             </Search>
+            <Link to={"/about"}>About</Link>
           </div>
           
           {
