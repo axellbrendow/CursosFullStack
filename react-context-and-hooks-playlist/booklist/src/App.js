@@ -3,6 +3,7 @@ import BookContextProvider from './contexts/BookContext';
 import Navbar from './components/Navbar';
 import BookList from './components/BookList';
 import BookForm from './components/BookForm';
+import ReducerTest from './components/ReducerTest';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Navbar/>
         <BookList/>
         <BookForm/>
+        <ReducerTest/>
       </BookContextProvider>
     </div>
   );
