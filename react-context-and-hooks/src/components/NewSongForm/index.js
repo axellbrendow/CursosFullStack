@@ -6,6 +6,7 @@ const NewSongForm = ({ addSong }) => {
     const handleSubmit = (event) => {
         event.preventDefault();
         addSong(title);
+		setTitle('');
     };
 
     return (
