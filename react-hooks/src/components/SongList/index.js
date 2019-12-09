@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import uuid from 'uuid/v1';
 import NewSongForm from '../NewSongForm';
 
@@ -8,6 +8,10 @@ const SongList = () => {
         {title: 'Dead Memories', id: 2},
         {title: '(sic)', id: 3},
     ]);
+
+    useEffect(() => {
+        console.log('useEffect hook ran', songs);
+    }, [songs]);
 
     const addSong = (title) => {
         setSongs([...songs, {title, id: uuid()}]);
