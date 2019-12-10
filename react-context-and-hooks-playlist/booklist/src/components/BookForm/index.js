@@ -2,7 +2,8 @@ import React, { useContext, useState } from 'react'
 import { BookContext } from '../../contexts/BookContext'
 
 const BookForm = () => {
-    const { addBook } = useContext(BookContext);
+    // const { addBook } = useContext(BookContext);
+    const { dispatchBooks } = useContext(BookContext);
     const [title, setTitle] = useState('');
     const [author, setAuthor] = useState('');
 
@@ -11,7 +12,7 @@ const BookForm = () => {
 
         if (title && author)
         {
-            addBook(title, author);
+            dispatchBooks({ type: 'ADD_BOOK', book: {title, author} });
             setTitle('');
             setAuthor('');
         }
