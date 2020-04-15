@@ -16,7 +16,7 @@
             import { FormsModule } from '@angular/forms'; -->
           <div class="field">
             <div class="control">
-              <input [(ngModel)]="keyword" name="keyword" type="text"
+              <input [(ngModel)]="keyword" (input)="searchProducts($event)" name="keyword" type="text"
                 class="input is-rounded" placeholder="Busque um produto">
             </div>
           </div>
@@ -38,7 +38,7 @@
         
         <figure class="media-left">
           <p class="image is-64x64">
-            <img src="assets/games/{{item.image}}">
+            <img src="assets/games/{{item.image}}" alt="{{item.name}}">
           </p>
         </figure>
 

@@ -21,10 +21,12 @@ export class SearchbarComponent implements OnInit {
   ngOnInit() {
   }
 
-  submit(e)
-  { // e = evento do formulario
-    e.preventDefault(); // previnir reload no browser
+  submit(e) {
+    e.preventDefault();
+  }
 
+  searchProducts(e)
+  {
     if (this.keyword)
     {
       this.submitted = true;
