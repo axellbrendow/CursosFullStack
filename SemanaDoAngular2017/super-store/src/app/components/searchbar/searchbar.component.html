@@ -17,7 +17,7 @@
           <div class="field">
             <div class="control">
               <input [(ngModel)]="keyword" (input)="searchProducts($event)" name="keyword" type="text"
-                class="input is-rounded" placeholder="Busque um produto">
+                class="input is-rounded" placeholder="Busque um produto" #productName>
             </div>
           </div>
         </form>
@@ -28,14 +28,14 @@
 
       <div class="nav-right">
       </div>
-      
+
     </nav>
 
     <div class="container">
 
       <article (click)="goTo(item)" class="media animated slideInDown"
         *ngFor="let item of items">
-        
+
         <figure class="media-left">
           <p class="image is-64x64">
             <img src="assets/games/{{item.image}}" alt="{{item.name}}">
@@ -45,7 +45,7 @@
         <div class="media-content">
           <div class="content">
             <p>
-              <strong>{{item.name}}</strong>             
+              <strong>{{item.name}}</strong>
               <br>
               <small>{{item.type}} · {{item.year}}</small>
             </p>
