@@ -2,6 +2,10 @@
   <div class="hero-body outer">
     <div class="container">
 
+      <app-searchbar [ngClass]="{'is-hidden': !modal}"
+          [openEvent]="openEventSubject.asObservable()"
+          (closeSearch)="hideSearch()"></app-searchbar>
+
       <section class="hero inner is-danger is-bold animated fadeIn">
         <div class="hero-body inner">
           <div class="container">
@@ -10,7 +14,13 @@
         </div>
       </section>
 
-      <br />
+      <div class="icons-container">
+        <a (click)="showSearch()">
+          <i class="fa fa-search"></i>
+        </a>
+
+        <app-cartbar></app-cartbar>
+      </div>
 
       <ul>
         <li *ngFor="let option of menu.options">
@@ -26,7 +36,7 @@
           </a>
         </li>
       </ul>
-      
+
     </div>
   </div>
 </section>
