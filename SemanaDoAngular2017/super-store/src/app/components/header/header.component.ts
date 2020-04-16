@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuService } from 'src/app/providers/menu.service';
 import * as $ from 'jquery';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -8,6 +9,8 @@ import * as $ from 'jquery';
   styleUrls: ['./header.component.sass']
 })
 export class HeaderComponent implements OnInit {
+
+  public openEventSubject = new Subject<void>();
 
   public modal: boolean = false;
 
@@ -27,7 +30,7 @@ export class HeaderComponent implements OnInit {
         {
           $('app-header nav').removeClass('is-fixed-top');
         }
-        
+
         this.menu.fix();
 
       }, true
@@ -37,6 +40,7 @@ export class HeaderComponent implements OnInit {
   showSearch()
   {
     this.modal = true;
+    this.openEventSubject.next();
   }
 
   hideSearch()
